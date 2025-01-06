@@ -12,10 +12,14 @@
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
-  }
+    "strictNullChecks": true, // Recomendado: Habilitar para mayor seguridad.
+    "noImplicitAny": true,    // Recomendado: Habilitar para mayor seguridad.
+    "strictBindCallApply": true, // Recomendado: Habilitar para mayor seguridad.
+    "forceConsistentCasingInFileNames": true, // Recomendado: Evitar errores de rutas.
+    "noFallthroughCasesInSwitch": true, // Recomendado: Evitar errores en switch.
+    "esModuleInterop": true, // Necesario para trabajar con módulos CommonJS y ES.
+    "moduleResolution": "node" // Necesario para resolver módulos correctamente.
+  },
+  "include": ["src/**/*"], // Incluye todos los archivos en la carpeta src.
+  "exclude": ["node_modules", "dist"] // Excluye estas carpetas.
 }
