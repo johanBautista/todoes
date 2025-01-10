@@ -6,6 +6,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { AuthModule } from './auth/auth.module';
 import { TodoModule } from './todo/todo.module';
+import { ProfileController } from './profile/profile.controller';
 
 @Module({
   imports: [
@@ -36,7 +37,7 @@ import { TodoModule } from './todo/todo.module';
     AuthModule,
     TodoModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, ProfileController],
   providers: [AppService],
 })
 export class AppModule {}
