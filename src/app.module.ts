@@ -2,8 +2,11 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TodoModule } from './todo/todo.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+
+import { AuthModule } from './auth/auth.module';
+import { TodoModule } from './todo/todo.module';
+import { ProfileController } from './profile/profile.controller';
 
 @Module({
   imports: [
@@ -31,9 +34,10 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         },
       }),
     }),
+    AuthModule,
     TodoModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, ProfileController],
   providers: [AppService],
 })
 export class AppModule {}
